@@ -1,0 +1,446 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>DeathClock — Make Every Moment Count</title>
+  <meta name="description" content="A radical mortality tool that calculates your estimated lifespan, tracks your bucket list, and forces existential clarity through honest self-reflection." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700;900&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css?v=6" />
+</head>
+<body>
+
+<!-- ONBOARDING -->
+<div id="onboarding" class="screen active">
+  <div class="onboard-wrap">
+    <div class="logo-area">
+      <span class="skull">☠</span>
+      <h1>DeathClock</h1>
+      <p class="tagline">Radical clarity through mortality.</p>
+    </div>
+
+    <!-- STEP INDICATOR -->
+    <div class="step-indicator">
+      <div class="step-track">
+        <div class="step-dot active" id="dot-1"></div>
+        <div class="step-line" id="line-1-2"></div>
+        <div class="step-dot" id="dot-2"></div>
+        <div class="step-line" id="line-2-3"></div>
+        <div class="step-dot" id="dot-3"></div>
+        <div class="step-line" id="line-3-4"></div>
+        <div class="step-dot" id="dot-4"></div>
+        <div class="step-line" id="line-4-5"></div>
+        <div class="step-dot" id="dot-5"></div>
+      </div>
+      <div class="step-labels">
+        <span>Identity</span>
+        <span>Body</span>
+        <span>Mind</span>
+        <span>Legacy</span>
+        <span>Bucket List</span>
+      </div>
+    </div>
+
+    <!-- STEP 1: WHO ARE YOU -->
+    <div class="card wizard-card active" id="step-1">
+      <div class="step-badge">Step 1 of 5</div>
+      <h2>Who are you?</h2>
+      <p class="sub">Your biological baseline shapes your clock.</p>
+      <div class="form-group">
+        <label>Date of Birth</label>
+        <input type="date" id="dob" />
+      </div>
+      <div class="form-group">
+        <label>Sex at Birth</label>
+        <select id="sex">
+          <option value="male">Male</option>
+          <option value="female">Female</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label>Country / Region</label>
+        <select id="country">
+          <option value="us">United States</option>
+          <option value="uk">United Kingdom</option>
+          <option value="canada">Canada</option>
+          <option value="australia">Australia</option>
+          <option value="japan">Japan</option>
+          <option value="germany">Germany</option>
+          <option value="france">France</option>
+          <option value="brazil">Brazil</option>
+          <option value="india">India</option>
+          <option value="china">China</option>
+          <option value="mexico">Mexico</option>
+          <option value="other">Other / World Average</option>
+        </select>
+      </div>
+      <div class="wizard-nav">
+        <div></div>
+        <button class="btn-primary btn-next" onclick="wizardNext(1)">Next →</button>
+      </div>
+    </div>
+
+    <!-- STEP 2: YOUR BODY -->
+    <div class="card wizard-card" id="step-2">
+      <div class="step-badge">Step 2 of 5</div>
+      <h2>Your body.</h2>
+      <p class="sub">Be honest. No one is watching.</p>
+      <div class="form-group">
+        <label>Do you smoke?</label>
+        <select id="smoke">
+          <option value="0">Never / Quit 5+ years ago</option>
+          <option value="1">Occasionally (social / vaping)</option>
+          <option value="2">Daily (under 10 cigarettes)</option>
+          <option value="3">Daily (10+ cigarettes)</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label>Alcohol consumption</label>
+        <select id="alcohol">
+          <option value="0">None / Rarely</option>
+          <option value="1">Light (1–7 drinks/week)</option>
+          <option value="2">Moderate (8–14 drinks/week)</option>
+          <option value="3">Heavy (15+ drinks/week)</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label>Exercise frequency</label>
+        <select id="exercise">
+          <option value="3">Daily vigorous (cardio + weights)</option>
+          <option value="2">4–5x/week</option>
+          <option value="1">1–3x/week</option>
+          <option value="0">Rarely / Sedentary</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label>Diet quality</label>
+        <select id="diet">
+          <option value="3">Excellent (whole foods, plant-rich, minimal processed)</option>
+          <option value="2">Good (mostly healthy, some processed)</option>
+          <option value="1">Mixed (convenience food regular)</option>
+          <option value="0">Poor (fast food, high sugar, high sodium)</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label>Average sleep (hours/night)</label>
+        <select id="sleep">
+          <option value="2">7–9 hours (optimal)</option>
+          <option value="1">6–7 hours</option>
+          <option value="0">Under 6 hours (chronic)</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label>Body weight category</label>
+        <select id="bmi">
+          <option value="1">Healthy weight (BMI 18.5–24.9)</option>
+          <option value="0">Underweight (BMI &lt; 18.5)</option>
+          <option value="-1">Overweight (BMI 25–29.9)</option>
+          <option value="-2">Obese (BMI 30–39.9)</option>
+          <option value="-3">Severely obese (BMI 40+)</option>
+        </select>
+      </div>
+      <div class="wizard-nav">
+        <button class="btn-back" onclick="wizardBack(2)">← Back</button>
+        <button class="btn-primary btn-next" onclick="wizardNext(2)">Next →</button>
+      </div>
+    </div>
+
+    <!-- STEP 3: YOUR MIND -->
+    <div class="card wizard-card" id="step-3">
+      <div class="step-badge">Step 3 of 5</div>
+      <h2>Your mind & environment.</h2>
+      <p class="sub">Psychology shapes biology. Science backs this up.</p>
+      <div class="form-group">
+        <label>Chronic stress level</label>
+        <select id="stress">
+          <option value="2">Low — generally calm and in control</option>
+          <option value="1">Moderate — stressed but managing</option>
+          <option value="0">High — regularly overwhelmed</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label>Mental health</label>
+        <select id="mentalhealth">
+          <option value="2">Good — no significant issues</option>
+          <option value="1">Mild — occasional anxiety or low mood</option>
+          <option value="0">Struggling — chronic anxiety, depression, or PTSD</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label>Social connection strength</label>
+        <select id="social">
+          <option value="2">Strong — deep friendships &amp; community</option>
+          <option value="1">Moderate — some close connections</option>
+          <option value="0">Weak / Lonely — mostly isolated</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label>Job / daily life satisfaction</label>
+        <select id="jobsat">
+          <option value="2">High — meaningful work, energized</option>
+          <option value="1">Moderate — tolerable but not thriving</option>
+          <option value="0">Low — dreading most days</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label>Sense of purpose (Ikigai)</label>
+        <select id="purpose">
+          <option value="2">Clear — I know why I'm here</option>
+          <option value="1">Emerging — still searching</option>
+          <option value="0">Lost — unclear direction</option>
+        </select>
+      </div>
+      <div class="wizard-nav">
+        <button class="btn-back" onclick="wizardBack(3)">← Back</button>
+        <button class="btn-primary btn-next" onclick="wizardNext(3)">Next →</button>
+      </div>
+    </div>
+
+    <!-- STEP 4: YOUR LEGACY -->
+    <div class="card wizard-card" id="step-4">
+      <div class="step-badge">Step 4 of 5</div>
+      <h2>Your legacy.</h2>
+      <p class="sub">These answers shape how the clock speaks to you.</p>
+      <div class="form-group">
+        <label>Life philosophy</label>
+        <select id="philosophy">
+          <option value="stoic">Stoic — virtue and discipline over comfort</option>
+          <option value="buddhist">Buddhist — impermanence, peace, non-attachment</option>
+          <option value="existentialist">Existentialist — create your own meaning</option>
+          <option value="faith">Faith-based — guided by spiritual belief</option>
+          <option value="yolo">YOLO — live fully, no regrets</option>
+          <option value="nihilist">Nihilist — nothing inherently matters, choose freely</option>
+          <option value="humanist">Humanist — human flourishing, empathy, reason</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label>What do you want to be remembered for?</label>
+        <textarea id="legacy-text" rows="2" placeholder="e.g. Being a great parent. Building something that outlasts me."></textarea>
+      </div>
+      <div class="form-group">
+        <label>What would you most regret NOT doing?</label>
+        <textarea id="regret-text" rows="2" placeholder="e.g. Never starting my own business. Not telling someone I loved them."></textarea>
+      </div>
+      <div class="form-group">
+        <label>Who depends on you?</label>
+        <select id="dependents">
+          <option value="children">Children</option>
+          <option value="partner">Partner / Spouse</option>
+          <option value="parents">Aging parents</option>
+          <option value="multiple">Multiple people</option>
+          <option value="nobody">Nobody right now</option>
+        </select>
+      </div>
+      <div class="wizard-nav">
+        <button class="btn-back" onclick="wizardBack(4)">← Back</button>
+        <button class="btn-primary btn-next" onclick="wizardNext(4)">Next →</button>
+      </div>
+    </div>
+
+    <!-- STEP 5: BUCKET LIST -->
+    <div class="card wizard-card" id="step-5">
+      <div class="step-badge">Step 5 of 5</div>
+      <h2>Your bucket list.</h2>
+      <p class="sub">What absolutely must happen before you die?</p>
+      <div class="bucket-input-row">
+        <select id="bucket-cat-input">
+          <option value="adventure">🏔 Adventure</option>
+          <option value="relationships">❤️ Relationships</option>
+          <option value="career">🚀 Career</option>
+          <option value="creative">🎨 Creative</option>
+          <option value="health">💪 Health</option>
+          <option value="spiritual">🌿 Spiritual</option>
+          <option value="travel">✈️ Travel</option>
+          <option value="learning">📚 Learning</option>
+        </select>
+        <input type="text" id="bucket-input-onboard" placeholder="e.g. Hike the Appalachian Trail…" />
+        <button class="btn-add" onclick="addBucketOnboard()">+ Add</button>
+      </div>
+      <div id="bucket-list-onboard" class="bucket-list-onboard"></div>
+      <p class="bucket-hint">Add at least 1 item. You can add more later.</p>
+      <div class="wizard-nav">
+        <button class="btn-back" onclick="wizardBack(5)">← Back</button>
+        <button class="btn-primary btn-launch" onclick="startClock()">Start My Clock ☠</button>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<!-- MAIN APP -->
+<div id="app" class="screen">
+  <!-- NAV -->
+  <nav class="navbar">
+    <div class="nav-logo"><span class="skull-sm">☠</span> DeathClock</div>
+    <div class="nav-links">
+      <button class="nav-btn active" onclick="showTab('dashboard')" id="tab-dashboard">Dashboard</button>
+      <button class="nav-btn" onclick="showTab('calendar')" id="tab-calendar">Life Calendar</button>
+      <button class="nav-btn" onclick="showTab('goals-tab')" id="tab-goals-tab">Goals</button>
+      <button class="nav-btn" onclick="showTab('bucket-tab')" id="tab-bucket-tab">Bucket List</button>
+      <button class="nav-btn" onclick="showTab('habits')" id="tab-habits">Habits</button>
+    </div>
+    <button class="btn-reset" onclick="resetApp()">↺ Reset</button>
+  </nav>
+
+  <!-- DASHBOARD -->
+  <div id="dashboard" class="tab-content active">
+    <div class="hero-section">
+      <div class="hero-text">
+        <p class="hero-label">YOU HAVE APPROXIMATELY</p>
+        <div class="countdown-grid">
+          <div class="count-box"><span id="cd-years" class="count-num">--</span><span class="count-label">years</span></div>
+          <div class="count-sep">:</div>
+          <div class="count-box"><span id="cd-days" class="count-num">--</span><span class="count-label">days</span></div>
+          <div class="count-sep">:</div>
+          <div class="count-box"><span id="cd-hours" class="count-num">--</span><span class="count-label">hours</span></div>
+          <div class="count-sep">:</div>
+          <div class="count-box"><span id="cd-mins" class="count-num">--</span><span class="count-label">mins</span></div>
+          <div class="count-sep">:</div>
+          <div class="count-box"><span id="cd-secs" class="count-num red-pulse">--</span><span class="count-label">secs</span></div>
+        </div>
+        <p class="hero-sublabel">left to live.</p>
+      </div>
+      <div class="hero-stats">
+        <div class="stat-card">
+          <span class="stat-label">Est. Death Date</span>
+          <span class="stat-val" id="death-date">—</span>
+        </div>
+        <div class="stat-card">
+          <span class="stat-label">Life Lived</span>
+          <span class="stat-val" id="life-pct">—</span>
+        </div>
+        <div class="stat-card">
+          <span class="stat-label">Est. Lifespan</span>
+          <span class="stat-val" id="lifespan-val">—</span>
+        </div>
+        <div class="stat-card">
+          <span class="stat-label">Today is</span>
+          <span class="stat-val" id="today-pct">—</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- PHILOSOPHY CARD -->
+    <div class="section philosophy-section">
+      <div class="philosophy-card" id="philosophy-card">
+        <div class="phi-icon" id="phi-icon">📿</div>
+        <div class="phi-body">
+          <div class="phi-label" id="phi-label">Your Philosophy</div>
+          <blockquote class="phi-quote" id="phi-quote">"…"</blockquote>
+          <div class="phi-author" id="phi-author">—</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- URGENCY SECTION -->
+    <div class="section">
+      <h2 class="section-title">⚡ Today's Urgency</h2>
+      <div class="urgency-bar-wrap">
+        <div class="urgency-bar"><div class="urgency-fill" id="urgency-fill"></div></div>
+        <span class="urgency-label" id="urgency-text">Life lived today</span>
+      </div>
+      <p class="urgency-msg" id="urgency-msg"></p>
+    </div>
+
+    <!-- REGRET RADAR -->
+    <div class="section" id="regret-section" style="display:none">
+      <h2 class="section-title">💭 What You'd Regret</h2>
+      <div class="regret-card" id="regret-card"></div>
+    </div>
+
+    <!-- QUICK GOAL ADD -->
+    <div class="section">
+      <h2 class="section-title">🏆 Add a Life Goal</h2>
+      <div class="task-input-row">
+        <input type="text" id="dash-goal-input" placeholder="e.g. Write a novel, Travel to Japan..." />
+        <button class="btn-add" onclick="addGoalFromDashboard()">+ Save to Goals</button>
+      </div>
+    </div>
+
+    <!-- QUICK TASK -->
+    <div class="section">
+      <h2 class="section-title">🎯 Goal Alignment — Today's Tasks</h2>
+      <div class="task-input-row">
+        <input type="text" id="task-input" placeholder="Add a task..." />
+        <button class="btn-add" onclick="addTask()">+ Add</button>
+      </div>
+      <div id="task-list"></div>
+    </div>
+  </div>
+
+  <!-- LIFE CALENDAR -->
+  <div id="calendar" class="tab-content">
+    <div class="section">
+      <h2 class="section-title">📅 Your Life in Weeks</h2>
+      <p class="section-sub">Each square = 1 week of your life. <span class="leg-lived">■</span> Lived &nbsp; <span class="leg-left">■</span> Remaining</p>
+      <div id="week-grid" class="week-grid"></div>
+    </div>
+  </div>
+
+  <!-- GOALS -->
+  <div id="goals-tab" class="tab-content">
+    <div class="section">
+      <h2 class="section-title">🏆 Your Life Goals</h2>
+      <p class="section-sub">Use ▲▼ to prioritize. Goals are used to score your daily tasks.</p>
+      <div class="task-input-row" style="margin-bottom:24px;">
+        <input type="text" id="goal-input" placeholder="Add a new life goal (e.g. Build a business)..." />
+        <button class="btn-add" onclick="addGoal()">+ Add</button>
+      </div>
+      <div id="goals-list" class="goals-list"></div>
+    </div>
+  </div>
+
+  <!-- BUCKET LIST TAB -->
+  <div id="bucket-tab" class="tab-content">
+    <div class="section">
+      <h2 class="section-title">🪣 Your Bucket List</h2>
+      <p class="section-sub">The things that must happen before your clock runs out.</p>
+
+      <!-- Bucket progress ring -->
+      <div class="bucket-progress-wrap">
+        <svg class="bucket-ring" viewBox="0 0 120 120" xmlns="http://www.w3.org/2000/svg">
+          <circle class="ring-bg" cx="60" cy="60" r="50"/>
+          <circle class="ring-fill" id="bucket-ring-fill" cx="60" cy="60" r="50" stroke-dasharray="314" stroke-dashoffset="314"/>
+        </svg>
+        <div class="bucket-ring-text">
+          <span id="bucket-done-count">0</span>
+          <span class="bucket-ring-denom" id="bucket-ring-denom">/ 0</span>
+          <span class="bucket-ring-label">done</span>
+        </div>
+      </div>
+      <p class="bucket-motivation" id="bucket-motivation"></p>
+
+      <!-- Add new bucket item -->
+      <div class="bucket-input-row" style="margin-bottom:24px;">
+        <select id="bucket-cat-tab">
+          <option value="adventure">🏔 Adventure</option>
+          <option value="relationships">❤️ Relationships</option>
+          <option value="career">🚀 Career</option>
+          <option value="creative">🎨 Creative</option>
+          <option value="health">💪 Health</option>
+          <option value="spiritual">🌿 Spiritual</option>
+          <option value="travel">✈️ Travel</option>
+          <option value="learning">📚 Learning</option>
+        </select>
+        <input type="text" id="bucket-input-tab" placeholder="Add a bucket list item…" />
+        <button class="btn-add" onclick="addBucketFromTab()">+ Add</button>
+      </div>
+
+      <div id="bucket-list-tab" class="bucket-grid"></div>
+    </div>
+  </div>
+
+  <!-- HABITS -->
+  <div id="habits" class="tab-content">
+    <div class="section">
+      <h2 class="section-title">⚗️ Habit Impact on Your Life</h2>
+      <p class="section-sub">See how your daily choices add or steal days from your clock.</p>
+      <div class="habits-grid" id="habits-grid"></div>
+    </div>
+  </div>
+</div>
+
+<script src="app.js?v=6"></script>
+</body>
+</html>
