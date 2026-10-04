@@ -8,6 +8,10 @@
 [![Stack](https://img.shields.io/badge/Stack-Vanilla%20HTML5%20%7C%20CSS3%20%7C%20JS-orange.svg)](#technology-stack)
 [![Privacy](https://img.shields.io/badge/Privacy-100%25%20Client--Side-brightgreen.svg)](#privacy--data-security)
 
+<p align="center">
+  <img src="social-card.png" alt="DeathClock Social Preview Card" width="100%" />
+</p>
+
 ---
 
 ## 📖 Overview

@@ -1,0 +1,329 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" width="1200" height="630">
+  <defs>
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;700;800;900&amp;family=JetBrains+Mono:wght@400;600;700&amp;display=swap');
+
+      .bg { fill: #07070a; }
+      .font-sans { font-family: 'Outfit', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; }
+      .font-mono { font-family: 'JetBrains Mono', 'SF Mono', Consolas, monospace; }
+    </style>
+
+    <!-- Ambient Glows -->
+    <radialGradient id="clockGlow" cx="250" cy="315" r="300" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#e63946" stop-opacity="0.22" />
+      <stop offset="45%" stop-color="#9a1c28" stop-opacity="0.08" />
+      <stop offset="100%" stop-color="#07070a" stop-opacity="0" />
+    </radialGradient>
+
+    <radialGradient id="topRightGlow" cx="1060" cy="100" r="380" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#ffb703" stop-opacity="0.08" />
+      <stop offset="60%" stop-color="#e63946" stop-opacity="0.03" />
+      <stop offset="100%" stop-color="#07070a" stop-opacity="0" />
+    </radialGradient>
+
+    <linearGradient id="titleGrad" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#ffffff" />
+      <stop offset="65%" stop-color="#f5f5fa" />
+      <stop offset="100%" stop-color="#ffb703" />
+    </linearGradient>
+
+    <linearGradient id="cardGrad" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#141520" stop-opacity="0.9" />
+      <stop offset="100%" stop-color="#0d0e17" stop-opacity="0.95" />
+    </linearGradient>
+
+    <linearGradient id="clockRim" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#32344a" />
+      <stop offset="50%" stop-color="#191a26" />
+      <stop offset="100%" stop-color="#32344a" />
+    </linearGradient>
+
+    <filter id="subtleGlow" x="-30%" y="-30%" width="160%" height="160%">
+      <feGaussianBlur stdDeviation="10" result="blur" />
+      <feComposite in="SourceGraphic" in2="blur" operator="over" />
+    </filter>
+  </defs>
+
+  <!-- Base Canvas Background -->
+  <rect width="1200" height="630" class="bg" />
+
+  <!-- Ambient Glows -->
+  <circle cx="250" cy="315" r="300" fill="url(#clockGlow)" />
+  <circle cx="1060" cy="100" r="380" fill="url(#topRightGlow)" />
+
+  <!-- Subtle Life Calendar Grid Watermark (evoking 'Your Life in Weeks') -->
+  <g opacity="0.035" stroke="#ffffff" stroke-width="1" fill="none">
+    <pattern id="weekGrid" width="16" height="16" patternUnits="userSpaceOnUse">
+      <rect x="2" y="2" width="12" height="12" rx="2" />
+    </pattern>
+    <rect x="0" y="0" width="1200" height="630" fill="url(#weekGrid)" />
+  </g>
+
+  <!-- Framed Border -->
+  <rect x="18" y="18" width="1164" height="594" rx="14" fill="none" stroke="#222332" stroke-width="1.5" />
+  <rect x="24" y="24" width="1152" height="582" rx="10" fill="none" stroke="#e63946" stroke-opacity="0.14" stroke-width="1" />
+
+  <!-- ======================================================== -->
+  <!-- LEFT: CLOCK WITH SKULL IN CENTER (CLEAN SVG STYLE)       -->
+  <!-- Center: cx="250", cy="315"                              -->
+  <!-- ======================================================== -->
+  <g id="clockAndSkull">
+    <!-- Clock Outer Halo / Rim -->
+    <circle cx="250" cy="315" r="198" fill="#090a10" stroke="#1d1e2c" stroke-width="2" />
+    <circle cx="250" cy="315" r="186" fill="#0c0d15" stroke="url(#clockRim)" stroke-width="4" />
+    
+    <!-- Outer Urgent Tick Ring (Red warning arc for final hour) -->
+    <circle cx="250" cy="315" r="186" fill="none" stroke="#e63946" stroke-width="2.5" stroke-dasharray="160 1020" stroke-linecap="round" opacity="0.9" />
+
+    <!-- Clock Face Elements translated to center (250, 315) -->
+    <g transform="translate(250, 315)">
+      
+      <!-- 60 Minute Ticks (Subtle) -->
+      <g stroke="#3a3c52" stroke-width="1.2" stroke-linecap="round">
+        <!-- 6 deg increments for 60 ticks -->
+        <line x1="0" y1="-178" x2="0" y2="-171" transform="rotate(6)" />
+        <line x1="0" y1="-178" x2="0" y2="-171" transform="rotate(12)" />
+        <line x1="0" y1="-178" x2="0" y2="-171" transform="rotate(18)" />
+        <line x1="0" y1="-178" x2="0" y2="-171" transform="rotate(24)" />
+        <line x1="0" y1="-178" x2="0" y2="-171" transform="rotate(36)" />
+        <line x1="0" y1="-178" x2="0" y2="-171" transform="rotate(42)" />
+        <line x1="0" y1="-178" x2="0" y2="-171" transform="rotate(48)" />
+        <line x1="0" y1="-178" x2="0" y2="-171" transform="rotate(54)" />
+        <line x1="0" y1="-178" x2="0" y2="-171" transform="rotate(66)" />
+        <line x1="0" y1="-178" x2="0" y2="-171" transform="rotate(72)" />
+        <line x1="0" y1="-178" x2="0" y2="-171" transform="rotate(78)" />
+        <line x1="0" y1="-178" x2="0" y2="-171" transform="rotate(84)" />
+        <line x1="0" y1="-178" x2="0" y2="-171" transform="rotate(96)" />
+        <line x1="0" y1="-178" x2="0" y2="-171" transform="rotate(102)" />
+        <line x1="0" y1="-178" x2="0" y2="-171" transform="rotate(108)" />
+        <line x1="0" y1="-178" x2="0" y2="-171" transform="rotate(114)" />
+        <line x1="0" y1="-178" x2="0" y2="-171" transform="rotate(126)" />
+        <line x1="0" y1="-178" x2="0" y2="-171" transform="rotate(132)" />
+        <line x1="0" y1="-178" x2="0" y2="-171" transform="rotate(138)" />
+        <line x1="0" y1="-178" x2="0" y2="-171" transform="rotate(144)" />
+        <line x1="0" y1="-178" x2="0" y2="-171" transform="rotate(156)" />
+        <line x1="0" y1="-178" x2="0" y2="-171" transform="rotate(162)" />
+        <line x1="0" y1="-178" x2="0" y2="-171" transform="rotate(168)" />
+        <line x1="0" y1="-178" x2="0" y2="-171" transform="rotate(174)" />
+        <line x1="0" y1="-178" x2="0" y2="-171" transform="rotate(186)" />
+        <line x1="0" y1="-178" x2="0" y2="-171" transform="rotate(192)" />
+        <line x1="0" y1="-178" x2="0" y2="-171" transform="rotate(198)" />
+        <line x1="0" y1="-178" x2="0" y2="-171" transform="rotate(204)" />
+        <line x1="0" y1="-178" x2="0" y2="-171" transform="rotate(216)" />
+        <line x1="0" y1="-178" x2="0" y2="-171" transform="rotate(222)" />
+        <line x1="0" y1="-178" x2="0" y2="-171" transform="rotate(228)" />
+        <line x1="0" y1="-178" x2="0" y2="-171" transform="rotate(234)" />
+        <line x1="0" y1="-178" x2="0" y2="-171" transform="rotate(246)" />
+        <line x1="0" y1="-178" x2="0" y2="-171" transform="rotate(252)" />
+        <line x1="0" y1="-178" x2="0" y2="-171" transform="rotate(258)" />
+        <line x1="0" y1="-178" x2="0" y2="-171" transform="rotate(264)" />
+        <line x1="0" y1="-178" x2="0" y2="-171" transform="rotate(276)" />
+        <line x1="0" y1="-178" x2="0" y2="-171" transform="rotate(282)" />
+        <line x1="0" y1="-178" x2="0" y2="-171" transform="rotate(288)" />
+        <line x1="0" y1="-178" x2="0" y2="-171" transform="rotate(294)" />
+        <line x1="0" y1="-178" x2="0" y2="-171" transform="rotate(306)" />
+        <line x1="0" y1="-178" x2="0" y2="-171" transform="rotate(312)" />
+        <line x1="0" y1="-178" x2="0" y2="-171" transform="rotate(318)" />
+        <line x1="0" y1="-178" x2="0" y2="-171" transform="rotate(324)" />
+        <line x1="0" y1="-178" x2="0" y2="-171" transform="rotate(336)" />
+        <line x1="0" y1="-178" x2="0" y2="-171" transform="rotate(342)" />
+        <line x1="0" y1="-178" x2="0" y2="-171" transform="rotate(348)" />
+        <line x1="0" y1="-178" x2="0" y2="-171" transform="rotate(354)" />
+      </g>
+
+      <!-- 12 Major Hour Ticks -->
+      <line x1="0" y1="-178" x2="0" y2="-160" stroke="#f0f0f5" stroke-width="3.5" stroke-linecap="round" />
+      <line x1="0" y1="-178" x2="0" y2="-164" stroke="#a0a0b8" stroke-width="2.5" stroke-linecap="round" transform="rotate(30)" />
+      <line x1="0" y1="-178" x2="0" y2="-164" stroke="#a0a0b8" stroke-width="2.5" stroke-linecap="round" transform="rotate(60)" />
+      <line x1="0" y1="-178" x2="0" y2="-160" stroke="#f0f0f5" stroke-width="3.5" stroke-linecap="round" transform="rotate(90)" />
+      <line x1="0" y1="-178" x2="0" y2="-164" stroke="#a0a0b8" stroke-width="2.5" stroke-linecap="round" transform="rotate(120)" />
+      <line x1="0" y1="-178" x2="0" y2="-164" stroke="#a0a0b8" stroke-width="2.5" stroke-linecap="round" transform="rotate(150)" />
+      <line x1="0" y1="-178" x2="0" y2="-160" stroke="#f0f0f5" stroke-width="3.5" stroke-linecap="round" transform="rotate(180)" />
+      <line x1="0" y1="-178" x2="0" y2="-164" stroke="#a0a0b8" stroke-width="2.5" stroke-linecap="round" transform="rotate(210)" />
+      <line x1="0" y1="-178" x2="0" y2="-164" stroke="#a0a0b8" stroke-width="2.5" stroke-linecap="round" transform="rotate(240)" />
+      <line x1="0" y1="-178" x2="0" y2="-160" stroke="#f0f0f5" stroke-width="3.5" stroke-linecap="round" transform="rotate(270)" />
+      <line x1="0" y1="-178" x2="0" y2="-164" stroke="#a0a0b8" stroke-width="2.5" stroke-linecap="round" transform="rotate(300)" />
+      <line x1="0" y1="-178" x2="0" y2="-164" stroke="#a0a0b8" stroke-width="2.5" stroke-linecap="round" transform="rotate(330)" />
+
+      <!-- Concentric Sub-dials -->
+      <circle cx="0" cy="0" r="148" fill="none" stroke="#1f202e" stroke-width="1" stroke-dasharray="3 5" />
+      <circle cx="0" cy="0" r="115" fill="#090a10" stroke="#252636" stroke-width="1.5" />
+      <circle cx="0" cy="0" r="85" fill="#06070a" stroke="#e63946" stroke-width="1" stroke-opacity="0.3" />
+
+      <!-- Cardinal Hour Markers in Roman / JetBrains Mono -->
+      <text x="0" y="-142" font-family="'JetBrains Mono', monospace" font-size="13" font-weight="700" fill="#e63946" text-anchor="middle">XII</text>
+      <text x="145" y="5" font-family="'JetBrains Mono', monospace" font-size="12" font-weight="600" fill="#6f7188" text-anchor="middle">III</text>
+      <text x="0" y="148" font-family="'JetBrains Mono', monospace" font-size="12" font-weight="600" fill="#6f7188" text-anchor="middle">VI</text>
+      <text x="-145" y="5" font-family="'JetBrains Mono', monospace" font-size="12" font-weight="600" fill="#6f7188" text-anchor="middle">IX</text>
+
+      <!-- ============================================== -->
+      <!-- SKULL IN CENTER (CLEAN SVG VECTOR ART)         -->
+      <!-- Positioned so center pivot rests on forehead    -->
+      <!-- ============================================== -->
+      <g id="skull" transform="translate(0, 16) scale(1.05)">
+        <!-- Skull Ambient Glow -->
+        <circle cx="0" cy="8" r="54" fill="#e63946" fill-opacity="0.15" filter="url(#subtleGlow)" />
+
+        <!-- Skull Cranium & Cheek Silhouette -->
+        <path d="M 0 -58
+                 C -38 -58 -54 -32 -54 -2
+                 C -54 18 -44 32 -36 40
+                 C -33 43 -28 46 -24 48
+                 L -24 64
+                 C -24 68 -20 72 -16 72
+                 L 16 72
+                 C 20 72 24 68 24 64
+                 L 24 48
+                 C 28 46 33 43 36 40
+                 C 44 32 54 18 54 -2
+                 C 54 -32 38 -58 0 -58 Z"
+              fill="#12131d"
+              stroke="#f0f0f5"
+              stroke-width="3"
+              stroke-linejoin="round" />
+
+        <!-- Skull Cranium Top Highlight -->
+        <path d="M -30 -24 C -22 -44 0 -48 18 -46"
+              fill="none"
+              stroke="#ffffff"
+              stroke-width="2"
+              stroke-linecap="round"
+              opacity="0.5" />
+
+        <!-- Left Eye Socket -->
+        <path d="M -16 -4 C -28 -4 -32 10 -30 20 C -28 28 -14 26 -12 18 C -10 10 -10 -4 -16 -4 Z"
+              fill="#06070a"
+              stroke="#e63946"
+              stroke-width="2.5" />
+        <circle cx="-21" cy="9" r="2.5" fill="#e63946" opacity="0.95" />
+
+        <!-- Right Eye Socket -->
+        <path d="M 16 -4 C 28 -4 32 10 30 20 C 28 28 14 26 12 18 C 10 10 10 -4 16 -4 Z"
+              fill="#06070a"
+              stroke="#e63946"
+              stroke-width="2.5" />
+        <circle cx="21" cy="9" r="2.5" fill="#e63946" opacity="0.95" />
+
+        <!-- Nasal Cavity (Inverted Heart / Teardrop) -->
+        <path d="M 0 17 L -6 32 C -6 35 0 36 0 36 C 0 36 6 35 6 32 Z"
+              fill="#06070a"
+              stroke="#f0f0f5"
+              stroke-width="2" />
+
+        <!-- Zygomatic Arches / Cheek Indentations -->
+        <path d="M -36 34 C -28 32 -26 42 -22 45"
+              fill="none" stroke="#686a82" stroke-width="2" stroke-linecap="round" />
+        <path d="M 36 34 C 28 32 26 42 22 45"
+              fill="none" stroke="#686a82" stroke-width="2" stroke-linecap="round" />
+
+        <!-- Teeth / Jaw Section -->
+        <line x1="-18" y1="60" x2="18" y2="60" stroke="#f0f0f5" stroke-width="2" />
+        <line x1="-12" y1="52" x2="-12" y2="68" stroke="#f0f0f5" stroke-width="2" />
+        <line x1="-4" y1="50" x2="-4" y2="70" stroke="#f0f0f5" stroke-width="2" />
+        <line x1="4" y1="50" x2="4" y2="70" stroke="#f0f0f5" stroke-width="2" />
+        <line x1="12" y1="52" x2="12" y2="68" stroke="#f0f0f5" stroke-width="2" />
+      </g>
+
+      <!-- CLOCK HANDS (Ticking towards midnight - urgency motif) -->
+      <!-- Hour Hand (pointing toward ~11:00 / -30 deg) -->
+      <g transform="rotate(-30)">
+        <polygon points="-5,14 0,-92 5,14" fill="#f0f0f5" stroke="#12131d" stroke-width="1.5" />
+        <line x1="0" y1="10" x2="0" y2="-88" stroke="#e63946" stroke-width="1.5" />
+      </g>
+
+      <!-- Minute Hand (pointing toward ~11:55 / -6 deg - five minutes to midnight) -->
+      <g transform="rotate(-6)">
+        <polygon points="-3.5,18 0,-134 3.5,18" fill="#ffffff" stroke="#12131d" stroke-width="1.5" />
+        <line x1="0" y1="14" x2="0" y2="-130" stroke="#ffb703" stroke-width="1.5" />
+      </g>
+
+      <!-- Second Hand (Urgent Red Needle with counterweight) -->
+      <g transform="rotate(76)">
+        <line x1="0" y1="28" x2="0" y2="-154" stroke="#e63946" stroke-width="1.5" stroke-linecap="round" />
+        <circle cx="0" cy="22" r="5" fill="#e63946" />
+        <circle cx="0" cy="-115" r="3.5" fill="#e63946" />
+      </g>
+
+      <!-- Center Pivot Pin (sitting right at top of skull brow) -->
+      <circle cx="0" cy="0" r="7" fill="#f0f0f5" stroke="#06070a" stroke-width="2" />
+      <circle cx="0" cy="0" r="3" fill="#e63946" />
+    </g>
+  </g>
+
+  <!-- ======================================================== -->
+  <!-- RIGHT: TITLE, EXPLAINER & FEATURE VALUE PROPOSITIONS     -->
+  <!-- Left margin: x="500", Width ~650px                      -->
+  <!-- ======================================================== -->
+
+  <!-- Top Pill / Badge -->
+  <g transform="translate(500, 78)">
+    <rect x="0" y="0" width="375" height="34" rx="17" fill="#141520" stroke="#e63946" stroke-width="1.2" stroke-opacity="0.5" />
+    <circle cx="18" cy="17" r="4.5" fill="#e63946" />
+    <text x="32" y="22" class="font-mono" font-size="11.5" font-weight="700" fill="#f0f0f5" letter-spacing="1.5">MEMENTO MORI  •  MORTALITY ENGINE</text>
+  </g>
+
+  <!-- Main Title: DEATHCLOCK -->
+  <g transform="translate(500, 164)">
+    <text class="font-sans" font-size="64" font-weight="900" fill="url(#titleGrad)" letter-spacing="2">DEATHCLOCK<tspan fill="#e63946">.</tspan></text>
+  </g>
+
+  <!-- Tagline / Subtitle -->
+  <g transform="translate(500, 204)">
+    <text class="font-sans" font-size="22" font-weight="700" fill="#ffb703" letter-spacing="0.5">Radical clarity through mortality.</text>
+  </g>
+
+  <!-- Short Explainer Paragraph -->
+  <g transform="translate(500, 248)">
+    <text class="font-sans" font-size="17" font-weight="400" fill="#c3c4d8" line-height="1.5">
+      <tspan x="0" dy="0">A radical mortality tool that calculates your estimated lifespan based</tspan>
+      <tspan x="0" dy="26">on actuarial and lifestyle data, visualizes your remaining time in</tspan>
+      <tspan x="0" dy="26">weeks, and turns existential urgency into purposeful living.</tspan>
+    </text>
+  </g>
+
+  <!-- Feature Grid / Key Capabilities -->
+  <g transform="translate(500, 355)">
+    <!-- Feature 1: Multi-Factor Lifespan -->
+    <g transform="translate(0, 0)">
+      <rect width="305" height="58" rx="8" fill="url(#cardGrad)" stroke="#222332" stroke-width="1" />
+      <text x="16" y="25" class="font-sans" font-size="14" font-weight="700" fill="#f0f0f5">⏳ Multi-Factor Lifespan</text>
+      <text x="16" y="44" class="font-sans" font-size="11.5" font-weight="400" fill="#8889a2">Biological, health &amp; psychological factors</text>
+    </g>
+
+    <!-- Feature 2: Life in Weeks -->
+    <g transform="translate(325, 0)">
+      <rect width="305" height="58" rx="8" fill="url(#cardGrad)" stroke="#222332" stroke-width="1" />
+      <text x="16" y="25" class="font-sans" font-size="14" font-weight="700" fill="#f0f0f5">📅 Life Calendar in Weeks</text>
+      <text x="16" y="44" class="font-sans" font-size="11.5" font-weight="400" fill="#8889a2">4,000 weeks visual mortality grid</text>
+    </g>
+
+    <!-- Feature 3: Habit Impact Simulator -->
+    <g transform="translate(0, 70)">
+      <rect width="305" height="58" rx="8" fill="url(#cardGrad)" stroke="#222332" stroke-width="1" />
+      <text x="16" y="25" class="font-sans" font-size="14" font-weight="700" fill="#f0f0f5">⚗️ Habit Impact Simulator</text>
+      <text x="16" y="44" class="font-sans" font-size="11.5" font-weight="400" fill="#8889a2">See years gained or lost in real time</text>
+    </g>
+
+    <!-- Feature 4: Privacy & Client-Side -->
+    <g transform="translate(325, 70)">
+      <rect width="305" height="58" rx="8" fill="url(#cardGrad)" stroke="#222332" stroke-width="1" />
+      <text x="16" y="25" class="font-sans" font-size="14" font-weight="700" fill="#f0f0f5">🔒 100% Private &amp; Offline</text>
+      <text x="16" y="44" class="font-sans" font-size="11.5" font-weight="400" fill="#8889a2">Zero tracking, zero cookies, browser-local</text>
+    </g>
+  </g>
+
+  <!-- Bottom Bar: URL & Attribution -->
+  <g transform="translate(500, 532)">
+    <line x1="0" y1="0" x2="630" y2="0" stroke="#1f202e" stroke-width="1" />
+    
+    <!-- Link / URL -->
+    <g transform="translate(0, 26)">
+      <text class="font-mono" font-size="13" font-weight="700" fill="#e63946">https://<tspan fill="#f0f0f5">trustnodelogic.com/deathclock/</tspan></text>
+    </g>
+
+    <!-- Open Source / Creator Tag -->
+    <g transform="translate(630, 26)">
+      <text class="font-sans" font-size="12" font-weight="600" fill="#666780" text-anchor="end">By Justin Ray  •  Trust Node Logic</text>
+    </g>
+  </g>
+</svg>
