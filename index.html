@@ -5,9 +5,22 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>DeathClock — Make Every Moment Count</title>
   <meta name="description" content="A radical mortality tool that calculates your estimated lifespan, tracks your bucket list, and forces existential clarity through honest self-reflection." />
-  <meta name="keywords" content="DeathClock, Mortality Calculator, Lifespan Estimator, Memento Mori, Bucket List, Justin Ray, Trust Node Logic" />
+  <meta name="keywords" content="DeathClock, Death Clock, Mortality Calculator, Lifespan Estimator, Memento Mori, Life Expectancy Calculator, Life in Weeks, 4000 Weeks Calendar, Habit Impact Simulator, Bucket List Tracker, Existential Productivity, Stoic Philosophy, Justin Ray, Trust Node Logic, Free Web App" />
   <meta name="author" content="Justin Ray" />
+  <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
+  <meta name="googlebot" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
+  <meta name="theme-color" content="#07070a" />
+  <meta name="color-scheme" content="dark" />
+  <meta name="application-name" content="DeathClock" />
+  <meta name="apple-mobile-web-app-title" content="DeathClock" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
   <link rel="canonical" href="https://trustnodelogic.com/deathclock/" />
+
+  <!-- Icons / Favicons for SERP and Browsers -->
+  <link rel="icon" type="image/svg+xml" href="favicon.svg" />
+  <link rel="icon" type="image/png" sizes="48x48" href="favicon.png" />
+  <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png" />
 
   <!-- Open Graph / Facebook -->
   <meta property="og:type" content="website" />
@@ -15,6 +28,7 @@
   <meta property="og:description" content="A radical mortality tool that calculates your estimated lifespan, tracks your bucket list, and forces existential clarity through honest self-reflection." />
   <meta property="og:url" content="https://trustnodelogic.com/deathclock/" />
   <meta property="og:site_name" content="Trust Node Logic" />
+  <meta property="og:locale" content="en_US" />
   <meta property="og:image" content="https://trustnodelogic.com/deathclock/social-card.png" />
   <meta property="og:image:secure_url" content="https://trustnodelogic.com/deathclock/social-card.png" />
   <meta property="og:image:type" content="image/png" />
@@ -29,27 +43,95 @@
   <meta name="twitter:image" content="https://trustnodelogic.com/deathclock/social-card.png" />
   <meta name="twitter:image:alt" content="DeathClock social card preview — A clock dial with a stylized vector skull in the center on a dark background, illustrating life countdown and mortality metrics." />
 
-  <!-- Structured Data / JSON-LD -->
+  <!-- Structured Data / JSON-LD (Rich Results for WebApplication, Creator, Publisher, & Breadcrumbs) -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
-    "@type": "WebApplication",
-    "name": "DeathClock",
-    "url": "https://trustnodelogic.com/deathclock/",
-    "image": "https://trustnodelogic.com/deathclock/social-card.png",
-    "description": "A radical mortality tool that calculates your estimated lifespan, tracks your bucket list, and forces existential clarity through honest self-reflection.",
-    "applicationCategory": "HealthApplication, ProductivityApplication",
-    "operatingSystem": "All",
-    "author": {
-      "@type": "Person",
-      "name": "Justin Ray",
-      "url": "https://trustnodelogic.com"
-    },
-    "publisher": {
-      "@type": "Organization",
-      "name": "Trust Node Logic",
-      "url": "https://trustnodelogic.com"
-    }
+    "@graph": [
+      {
+        "@type": ["WebApplication", "SoftwareApplication"],
+        "@id": "https://trustnodelogic.com/deathclock/#webapp",
+        "name": "DeathClock",
+        "alternateName": [
+          "Death Clock",
+          "Memento Mori Life Calculator",
+          "Actuarial Mortality Estimator"
+        ],
+        "url": "https://trustnodelogic.com/deathclock/",
+        "image": "https://trustnodelogic.com/deathclock/social-card.png",
+        "screenshot": "https://trustnodelogic.com/deathclock/social-card.png",
+        "description": "A radical mortality tool and existential productivity app that calculates your estimated lifespan, visualizes your life in weeks, tracks bucket lists, and aligns daily habits with mortality.",
+        "applicationCategory": "HealthApplication, ProductivityApplication, LifestyleApplication",
+        "operatingSystem": "All",
+        "browserRequirements": "Requires JavaScript. Requires HTML5.",
+        "softwareVersion": "1.2.0",
+        "isAccessibleForFree": true,
+        "offers": {
+          "@type": "Offer",
+          "price": "0",
+          "priceCurrency": "USD",
+          "availability": "https://schema.org/InStock",
+          "category": "Free Web Application"
+        },
+        "author": {
+          "@type": "Person",
+          "@id": "https://trustnodelogic.com/#justin-ray",
+          "name": "Justin Ray",
+          "url": "https://trustnodelogic.com",
+          "jobTitle": "Creator & Software Engineer"
+        },
+        "creator": {
+          "@type": "Person",
+          "@id": "https://trustnodelogic.com/#justin-ray"
+        },
+        "publisher": {
+          "@type": "Organization",
+          "@id": "https://trustnodelogic.com/#organization",
+          "name": "Trust Node Logic",
+          "url": "https://trustnodelogic.com",
+          "logo": {
+            "@type": "ImageObject",
+            "url": "https://trustnodelogic.com/deathclock/apple-touch-icon.png"
+          }
+        },
+        "featureList": [
+          "Multi-factor actuarial lifespan calculation engine based on demographic and lifestyle baselines",
+          "Real-time countdown timer tracking remaining years, days, hours, minutes, and seconds",
+          "Visual Life in Weeks calendar grid representing a human lifetime in 4,000 weeks",
+          "Goal-aligned task scoring engine grading daily tasks as High, Mid, or Low existential alignment",
+          "Categorized bucket list tracker across 8 lifetime domains with circular progress visualizer",
+          "Interactive habit impact simulator dynamically shifting estimated death date in real time",
+          "100% client-side privacy architecture with zero tracking, cookies, or remote data storage"
+        ],
+        "keywords": "DeathClock, Death Clock, Mortality Calculator, Lifespan Estimator, Memento Mori, Life in Weeks, 4000 Weeks, Actuarial Life Expectancy, Bucket List Tracker, Habit Impact Simulator, Existential Productivity, Justin Ray, Trust Node Logic, Free Web App"
+      },
+      {
+        "@type": "WebSite",
+        "@id": "https://trustnodelogic.com/#website",
+        "url": "https://trustnodelogic.com",
+        "name": "Trust Node Logic",
+        "publisher": {
+          "@id": "https://trustnodelogic.com/#organization"
+        }
+      },
+      {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Trust Node Logic",
+            "item": "https://trustnodelogic.com"
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "DeathClock",
+            "item": "https://trustnodelogic.com/deathclock/"
+          }
+        ]
+      }
+    ]
   }
   </script>
 
